@@ -24,7 +24,7 @@ public class SocketCliente {
             System.out.println("Estableciendo conexion");
 
             //localhost = 127.0.0.1
-            SocketAddress adress = new InetSocketAddress("172.31.73.14", 5555);
+            SocketAddress adress = new InetSocketAddress("localhost", 5555);
 
             cliente.connect(adress);
 
@@ -38,6 +38,8 @@ public class SocketCliente {
             System.out.println("Mensaje enviado");
 
             System.out.println("Cerrando el socket cliente...");
+            is.read();
+
             cliente.close();
 
             System.out.println("Terminado");
